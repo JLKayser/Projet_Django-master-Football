@@ -1,0 +1,13 @@
+{% extends "football/main.html" %}
+{% block title %}
+Football
+{% endblock %}
+{% block content %}
+{% for l in liste %}
+
+<ul class="ul-list">
+     <h1 style="margin-bottom:13px;">{{l.nom_club}}</h1>
+     <li class="li-list"> Le club {{l}} a était crée en {{l.date_parution_club|date:"d/m/Y"}}<br>Le club se trouve en {{l.pays_club}}<br>Le club a gagné {{l.nombre_LDC}} ligue des champions<br>Détail sur {{l}} : {{l.resume}} <a href="affiche/{{l.id}}"><button>Afficher les détails</button></a> <a href="delete/{{l.id}}"><button>Effacer</button></a> <a href="update/{{l.id}}"><button>Update</button></a></li>
+</ul>
+{%endfor%}
+{% endblock %}
